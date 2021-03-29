@@ -1,0 +1,180 @@
+{
+    "name": "Server",
+    "children":[
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+                ,
+        {
+            "name": "Logger",
+            "attributes": {"name":"tc_log","verbosityLevel":"INFORMATION"}        },
+                ,
+        {
+            "name": "Logger",
+            "attributes": {"name":"servlet_log","path":"logs/servlet.log"}        },
+                ,
+        {
+            "name": "Logger",
+            "attributes": {"name":"JASPER_LOG","path":"logs/jasper.log","verbosityLevel":"INFORMATION"}        },
+                ,
+                ,
+                ,
+        {
+            "name": "ContextManager",
+            "attributes": {"debug":"0","showDebugInfo":"true","workDir":"work"},
+            "children":[
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.AutoSetup"}                },
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.WebXmlReader"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.LoaderInterceptor"}                },
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.DefaultCMSetter"}                },
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.WorkDirInterceptor"}                },
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.SessionInterceptor","noCookies":"false"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.SimpleMapper1","debug":"0"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.InvokerInterceptor","debug":"0","prefix":"/servlet/"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.StaticInterceptor","debug":"0","suppress":"false"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.session.StandardSessionInterceptor"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.AccessInterceptor","debug":"0"}                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "RequestInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.request.SimpleRealm","debug":"0"}                },
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "ContextInterceptor",
+                    "attributes": {"className":"org.apache.tomcat.context.LoadOnStartupInterceptor"}                },
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "Connector",
+                    "attributes": {"className":"org.apache.tomcat.service.PoolTcpConnector"},
+                    "children":[
+                                                ,
+                        {
+                            "name": "Parameter",
+                            "attributes": {"name":"handler","value":"org.apache.tomcat.service.http.HttpConnectionHandler"}                        },
+                                                ,
+                        {
+                            "name": "Parameter",
+                            "attributes": {"name":"port","value":"8080"}                        },
+                                                
+                    ]
+                },
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "Connector",
+                    "attributes": {"className":"org.apache.tomcat.service.PoolTcpConnector"},
+                    "children":[
+                                                ,
+                        {
+                            "name": "Parameter",
+                            "attributes": {"name":"handler","value":"org.apache.tomcat.service.connector.Ajp12ConnectionHandler"}                        },
+                                                ,
+                        {
+                            "name": "Parameter",
+                            "attributes": {"name":"port","value":"8007"}                        },
+                                                
+                    ]
+                },
+                                ,
+                                ,
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "Context",
+                    "attributes": {"crossContext":"false","debug":"0","docBase":"webapps/examples","path":"/examples","reloadable":"true"},
+                    "children":[
+                                                
+                    ]
+                },
+                                ,
+                                ,
+                                ,
+                {
+                    "name": "Context",
+                    "attributes": {"crossContext":"true","debug":"0","docBase":"webapps/admin","path":"/admin","reloadable":"true","trusted":"false"},
+                    "children":[
+                                                
+                    ]
+                },
+                                ,
+                                ,
+                                
+            ]
+        },
+                
+    ]
+}

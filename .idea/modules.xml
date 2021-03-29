@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ArrayListMore/ArrayListMore.iml" filepath="$PROJECT_DIR$/ArrayListMore/ArrayListMore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArtOfConcurrency/ArtOfConcurrency.iml" filepath="$PROJECT_DIR$/ArtOfConcurrency/ArtOfConcurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ConcurrencyPractice/ConcurrencyPractice.iml" filepath="$PROJECT_DIR$/ConcurrencyPractice/ConcurrencyPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoreJavaVolume1/CoreJavaVolume1.iml" filepath="$PROJECT_DIR$/CoreJavaVolume1/CoreJavaVolume1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CoreJavaVolume2/CoreJavaVolume2.iml" filepath="$PROJECT_DIR$/CoreJavaVolume2/CoreJavaVolume2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EffectiveJava/EffectiveJava.iml" filepath="$PROJECT_DIR$/EffectiveJava/EffectiveJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EffectiveJavaJDK11/EffectiveJavaJDK11.iml" filepath="$PROJECT_DIR$/EffectiveJavaJDK11/EffectiveJavaJDK11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Multi-thread/Multi-thread.iml" filepath="$PROJECT_DIR$/Multi-thread/Multi-thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RMI/RMI.iml" filepath="$PROJECT_DIR$/RMI/RMI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../SpringDemo/SpringDemo.iml" filepath="$PROJECT_DIR$/../../SpringDemo/SpringDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThinkingInJava/ThinkingInJava.iml" filepath="$PROJECT_DIR$/ThinkingInJava/ThinkingInJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TreeMapMore/TreeMapMore.iml" filepath="$PROJECT_DIR$/TreeMapMore/TreeMapMore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UnderstandingTheJVM/UnderstandingTheJVM.iml" filepath="$PROJECT_DIR$/UnderstandingTheJVM/UnderstandingTheJVM.iml" />
+    </modules>
+  </component>
+</project>

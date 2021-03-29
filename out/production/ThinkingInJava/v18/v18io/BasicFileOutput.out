@@ -1,0 +1,28 @@
+1: package v18.v18io;
+2: 
+3: import cn.shyshetxwh.util.Directory;
+4: 
+5: import java.io.*;
+6: 
+7: public class BasicFileOutput {
+8:     static String outFilename="BasicFileOutput.out";
+9:     public static void main(String[] args) throws IOException {
+10:         String path = Directory.findPathFromCurrent("BasicFileOutput");
+11:         String outPath = new File(path).getParentFile().getAbsolutePath()+"/"+outFilename;
+12: 
+13:         BufferedReader in = new BufferedReader(new StringReader(BufferedInputFile.read(path)));
+14: 
+15:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outPath)));
+16: 
+17:         int lineCount=1;
+18:         String s;
+19:         while ((s=in.readLine())!=null){
+20:             out.println(lineCount++ + ": "+s);
+21:         }
+22:         out.close();
+23: 
+24:         System.out.println(BufferedInputFile.read(outPath));
+25: 
+26: 
+27:     }
+28: }

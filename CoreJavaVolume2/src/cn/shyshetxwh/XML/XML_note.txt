@@ -1,0 +1,53 @@
+1、XSD文件是一种XML文件
+　　XSD文件是一种XML文件，满足所有XML文件格式的一切要求，比如有且仅有一个根元素（这个根元素就是），所有对XML文件有效的技术对XSD文件
+也同样有效，包括使用XSD文件作为语义约束。
+
+2、XSD文件的根元素
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!--xsd文件本身是xml文件，第一行是xml声明-->
+    <xsd:schema xmlns="http://www.springframework.org/schema/beans"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                targetNamespace="http://www.springframework.org/schema/beans">
+    <!--
+       xsd作为xml文件，其根元素是schema
+       属性xmlns:xsd="http://www.w3.org/2001/XMLSchema"是引入文档约束的，表示在当前文档导入"http://www.w3.org/2001/XMLSchema"中所描述的规则，并且使用里面的元素要添加xsd的前缀（和xmlns:xsd相对应，也可以指定其它前缀）
+       属性targetNamespace="http://www.springframework.org/schema/beans"表示当前文档定义的规则处于命名空间"http://www.springfarmework.org/schema/beans"下面，xml文档如需要导入当前文档的规则，就可以指定这个命名空间
+       属性xmlns="http://www.springframework.org/schema/beans"表示在当前文档中导入"http://www.springframework.org/schema/beans"命名空间下所描述的规则（即当前文档本身描述的规则），并且无需使用前缀，也即默认命名空间，这样，在当前文档就可以直接引用所定义的元素了
+    -->
+    </xsd:schema>
+
+3、在xml文档中使用xsd文件
+
+　　根据被引用的xsd文件是否定义了targetNamespace属性，可以分两种情况导入相应的xsd文件：
+    （1）引入无命名空间的XSD
+    <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="无命名空间XSD文件的URI">
+    <!--
+       1.第一步，添加xmlns:xsi属性，引入xsi命名空间
+       2.第二步，通过xsi命名空间下的属性noNamespaceSchemaLocation指定XSD文件的URI
+    -->
+    </root>
+    （2）引入有命名空间的XSD
+    <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="前缀ns1对应命名空间" xmlns:ns2="前缀ns2对应命名空间" xsi:schemaLocation="ns1前缀对应命名空间 前缀ns1对应命名空间XSD文件的URI ns2前缀对应命名空间 前缀ns2对应命名空间XSD文件的URI">
+    <!--
+       1.第一步，添加xmlns:xsi属性，引入xsi命名空间
+       2.第二步，添加命名空间，可添加多个，但没有前缀的命名空间最多只能有1个
+       3.第三步，通过xsi命名空间下的属性schemaLocation指定每个命名空间XSD文件的URI，命名空间和相应URI一一对应，多个命名空间用空格分隔
+    -->
+    </root>
+
+    这里提醒一下：XSD文件引入的是w3的XMLSchema，而一般的XML文档引入的是XMLSchema-instance。
+
+
+例子：
+*.xsd
+    <?xml version="1.0"?>
+    <xsd:schema xmlns="http://www.itcast.cn/xml"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"    //基本的标签
+                targetNamespace="http://www.itcast.cn/xml" elementFormDefault="qualified">
+
+*.xml
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<students xmlns="http://www.itcast.cn/xml"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   //基本的标签
+          xsi:schemaLocation="http://www.itcast.cn/xml student.xsd">

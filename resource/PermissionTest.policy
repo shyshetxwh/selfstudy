@@ -1,0 +1,4 @@
+grant
+{
+    permission cn.shyshetxwh.security.permissions.WordCheckPermission "sex,drugs,C++", "avoid";
+};
